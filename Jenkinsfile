@@ -2,13 +2,13 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            agent {
-                docker { 
-                    image 'jekyll/jekyll:3.8' 
-                }
-            }
+            // agent {
+            //     docker { 
+            //         image 'jekyll/jekyll:3.8' 
+            //     }
+            // }
             steps {
-                sh 'jekyll --version'
+                sh 'docker run hello-world'
             }
         }
         stage('Test') {
