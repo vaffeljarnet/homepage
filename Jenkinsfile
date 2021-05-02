@@ -7,6 +7,9 @@ pipeline {
                     image 'jekyll/jekyll:3.8' 
                 }
             }
+            steps {
+                sh 'jekyll --version'
+            }
         }
         stage('Test') {
             steps {
