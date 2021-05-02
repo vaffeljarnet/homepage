@@ -27,7 +27,7 @@ url: "https://vaffeljarnet.github.io/homepage/" # the base hostname & protocol f
 github_username:  vaffeljarnet
 
 # Build settings
-theme: minima
+# theme: minima
 
 # Exclude from processing.
 # The following items will not be processed, by default.
