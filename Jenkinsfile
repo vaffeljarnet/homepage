@@ -2,13 +2,13 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            // agent {
-            //     docker { 
-            //         image 'jekyll/jekyll:3.8' 
-            //     }
-            // }
+            agent {
+                docker { 
+                    image 'jekyll/jekyll:3.8' 
+                }
+            }
             steps {
-                sh 'docker run hello-world'
+                sh 'docker run --rm -it --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" --env JEKYLL_ENV=production jekyll/jekyll:3.8 jekyll build'
             }
         }
         stage('Test') {
